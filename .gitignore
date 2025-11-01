@@ -1,0 +1,20 @@
+# Node
+node_modules/
+.next/
+dist/
+.env.local
+
+# Go
+/bin/
+/tmp/
+
+# Docker
+.docker/
+
+# DB
+*.db
+*.sqlite
+
+# Misc
+.DS_Store
+.env
