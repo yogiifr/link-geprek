@@ -7,6 +7,31 @@
 
 ---
 
+## Core Requirements
+
+- Shorten long URL → short code
+- Redirect short → original
+- Count clicks
+- Analytics dashboard
+
+## Data Flow
+
+1. User → POST /api/shorten
+2. Validate → Generate hashid → Save DB
+3. Return short URL
+4. User click → GET /:code
+5. Redis cache? → Redirect + INCR
+6. No? → DB → Cache → Redirect
+
+## Security
+
+- URL validation (govalidator)
+- Rate limiting (100/min)
+- Hashids salt
+- CORS
+
+---
+
 ## Tech Stack
 
 | Layer      | Tech |
